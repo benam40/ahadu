@@ -1,0 +1,20 @@
+<% layout('layout', { title: 'Edit Contact' }) %>
+<h2>Edit Contact</h2>
+<form action="/contacts/<%= idx %>?_method=PUT" method="POST" class="row g-3">
+  <div class="col-md-6">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name" value="<%= contact.name %>" required>
+  </div>
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" value="<%= contact.email %>" required>
+  </div>
+  <div class="col-md-6">
+    <label for="phone" class="form-label">Phone</label>
+    <input type="text" class="form-control" id="phone" name="phone" value="<%= contact.phone %>" required>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Update Contact</button>
+    <a href="/contacts" class="btn btn-secondary">Cancel</a>
+  </div>
+</form>
